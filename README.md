@@ -10,7 +10,7 @@ The overall repository structure consists of the following projects located unde
   - News - sample feed providing the worldwide news
   - Quotes - sample feed providing the quotes
 
-<br />
+<br /><br />
 <details open="open">
   <summary>TOOLS</summary>
   <ol>
