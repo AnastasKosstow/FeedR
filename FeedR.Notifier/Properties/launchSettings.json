@@ -1,0 +1,14 @@
+﻿{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "FeedR.Notifier": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchUrl": "weatherforecast",
+      "applicationUrl": "https://localhost:7114;http://localhost:5114",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
