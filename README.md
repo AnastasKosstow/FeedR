@@ -14,7 +14,7 @@ The overall repository structure consists of the following projects located unde
 <details open="open">
   <summary>TOOLS</summary>
   <ol>
-    - <li><a href="#Tye">Tye</a></li>
+    <li><a href="#Tye">- Tye</a></li>
   </ol>
 </details>
 
