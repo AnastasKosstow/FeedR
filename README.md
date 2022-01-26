@@ -9,3 +9,20 @@ The overall repository structure consists of the following projects located unde
 - Feeds
   - News - sample feed providing the worldwide news
   - Quotes - sample feed providing the quotes
+
+<br />
+<details open="open">
+  <summary>TOOLS</summary>
+  <ol>
+    <li><a href="#Tye">Tye</a></li>
+  </ol>
+</details>
+
+
+## Tye
+
+Tye is a tool that makes developing, testing, and deploying microservices and distributed applications easier. 
+Project Tye includes a local orchestrator to make developing microservices easier and the ability to deploy microservices to Kubernetes with minimal configuration.
+
+Documentation and installation: [Project Tye](<https://github.com/dotnet/tye>), [devblogs.microsoft.com](<https://devblogs.microsoft.com/dotnet/introducing-project-tye/>).
+
