@@ -31,3 +31,11 @@ services:
    env:
     - name: ASPNETCORE_ENVIRONMENT
       value: dev
+
+ - name: feedr-notifier
+   project: src/FeedR.Notifier/FeedR.Notifier.csproj
+   bindings:
+    - port: 5040
+   env:
+    - name: ASPNETCORE_ENVIRONMENT
+      value: dev
