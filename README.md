@@ -24,4 +24,5 @@ The overall repository structure consists of the following projects located unde
 Tye is a tool that makes developing, testing, and deploying microservices and distributed applications easier. 
 Project Tye includes a local orchestrator to make developing microservices easier and the ability to deploy microservices to Kubernetes with minimal configuration.
 
-Documentation and installation: [Tye](<https://github.com/dotnet/tye>).
+Documentation and installation: [Project Tye](<https://github.com/dotnet/tye>), [devblogs.microsoft.com](<https://devblogs.microsoft.com/dotnet/introducing-project-tye/>).
+
