@@ -16,6 +16,11 @@ The overall repository structure consists of the following projects located unde
   <ol>
     <li><a href="#Tye">Tye</a></li>
   </ol>
+  <ol>
+    <li><a href="#Tye">Tye</a></li>
+  </ol>
+  <li><a href="#Tye">Tye</a></li>
+  <li><a href="#Tye">Tye</a></li>
 </details>
 
 
@@ -25,4 +30,6 @@ Tye is a tool that makes developing, testing, and deploying microservices and di
 Project Tye includes a local orchestrator to make developing microservices easier and the ability to deploy microservices to Kubernetes with minimal configuration.
 
 Documentation and installation: [Project Tye](<https://github.com/dotnet/tye>), [devblogs.microsoft.com](<https://devblogs.microsoft.com/dotnet/introducing-project-tye/>).
+
+https://docs.docker.com/samples/dotnetcore/
 
