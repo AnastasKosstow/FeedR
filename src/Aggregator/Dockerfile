@@ -6,6 +6,6 @@ RUN dotnet publish src/Aggregator/FeedR.Aggregator -c release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build /app/out .
-ENV ASPNETCORE_URLS http://*:80
+ENV ASPNETCORE_URLS http://localhost:5010:80
 ENV ASPNETCORE_ENVIRONMENT docker
 ENTRYPOINT dotnet FeedR.Aggregator.dll

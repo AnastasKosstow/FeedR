@@ -1,0 +1,56 @@
+version: '3'
+services:
+  gateway:
+    build:
+      dockerfile: src/Gateway/Dockerfile
+    container_name: feedr-gateway
+    restart: unless-stopped
+    ports:
+      - 5000:80
+    networks:
+      - feedr
+
+  aggregator:
+    build:
+      dockerfile: src/Aggregator/Dockerfile
+    container_name: feedr-aggregator
+    restart: unless-stopped
+    ports:
+      - 5010:80
+    networks:
+      - feedr
+
+  notifier:
+    build:
+      dockerfile: src/Notifier/Dockerfile
+    container_name: feedr-notifier
+    restart: unless-stopped
+    ports:
+      - 5020:80
+    networks:
+      - feedr
+
+  feeds-news:
+    build:
+      dockerfile: src/Feeds/News/Dockerfile
+    container_name: feedr-feeds-news
+    restart: unless-stopped
+    ports:
+      - 5030:80
+    networks:
+      - feedr
+
+  feeds-quotes:
+    build:
+      dockerfile: src/Feeds/Quotes/Dockerfile
+    container_name: feedr-feeds-quotes
+    restart: unless-stopped
+    ports:
+      - 5040:80
+    networks:
+      - feedr
+
+networks:
+  feedr:
+    name: feedr
+    # external: true

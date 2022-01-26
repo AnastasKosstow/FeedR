@@ -6,23 +6,44 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B5AA6232-C0BC-4E83-B096-10ADB1F1B4F0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{720B44C0-B2CF-4E20-A77D-7FC514CE1D20}"
+	ProjectSection(SolutionItems) = preProject
+		src\Gateway\.dockerignore = src\Gateway\.dockerignore
+		src\Gateway\Dockerfile = src\Gateway\Dockerfile
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7F5EA134-47A6-4AD5-B37F-74FF37E271A2}"
 	ProjectSection(SolutionItems) = preProject
+		services.yaml = services.yaml
 		tye.yml = tye.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{082913E9-962C-45C2-96EF-EEC9F15024EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notifier", "Notifier", "{F4FC0B8B-2C2A-4113-B7E2-6657750FD3D7}"
+	ProjectSection(SolutionItems) = preProject
+		src\Notifier\.dockerignore = src\Notifier\.dockerignore
+		src\Notifier\Dockerfile = src\Notifier\Dockerfile
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Feeds", "Feeds", "{C5959DD0-1B65-406A-848E-B4ABB63FA227}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "News", "News", "{CC043666-14C6-42A1-A8D4-8E6A2FE3954C}"
+	ProjectSection(SolutionItems) = preProject
+		src\Feeds\News\.dockerignore = src\Feeds\News\.dockerignore
+		src\Feeds\News\Dockerfile = src\Feeds\News\Dockerfile
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Quotes", "Quotes", "{EF715A5F-9473-4754-94FB-D268FA113E9A}"
+	ProjectSection(SolutionItems) = preProject
+		src\Feeds\Quotes\.dockerignore = src\Feeds\Quotes\.dockerignore
+		src\Feeds\Quotes\Dockerfile = src\Feeds\Quotes\Dockerfile
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aggregator", "Aggregator", "{B4434D34-3CFF-48BF-A471-3778D5472268}"
+	ProjectSection(SolutionItems) = preProject
+		src\Aggregator\.dockerignore = src\Aggregator\.dockerignore
+		src\Aggregator\Dockerfile = src\Aggregator\Dockerfile
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FeedR.Aggregator", "src\Aggregator\FeedR.Aggregator\FeedR.Aggregator.csproj", "{E5CD098F-0AA1-4EDA-9473-053D7664DFA2}"
 EndProject
