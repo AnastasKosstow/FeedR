@@ -53,6 +53,12 @@ When YARP proxies a request, it handles the HTTP connection from the client, and
 
 <img src="items/yarp.png" alt="yarp" width="686" height="248">
 
+Using a reverse proxy has a number of advantages:
+
+<li>It acts as the public endpoint for a site or set of services, enabling the url-space exposed to be independent from the actual implementation</li>
+<li>Forwards calls to backend servers to perform real work, balancing load between them</li>
+<li>Can offload work from backend servers such as TLS Encryption, Auth2, Compression, Caching</li>
+
 More: [YARP](<https://microsoft.github.io/reverse-proxy/>)
 
 
