@@ -1,7 +1,7 @@
 name: FeedR
 services:
  - name: feedr-gateway
-   project: src/FeedR.Gateway/FeedR.Gateway.csproj
+   project: src/Gateway/FeedR.Gateway/FeedR.Gateway.csproj
    bindings:
     - port: 5000
    env:
@@ -9,7 +9,7 @@ services:
       value: dev
 
  - name: feedr-aggregator
-   project: src/FeedR.Aggregator/FeedR.Aggregator.csproj
+   project: src/Aggregator/FeedR.Aggregator/FeedR.Aggregator.csproj
    bindings:
     - port: 5010
    env:
@@ -17,7 +17,7 @@ services:
       value: dev
 
  - name: feedr-news
-   project: src/FeedR.Feeds.News/FeedR.Feeds.News.csproj
+   project: src/Feeds/News/FeedR.Feeds.News/FeedR.Feeds.News.csproj
    bindings:
     - port: 5020
    env:
@@ -25,7 +25,7 @@ services:
       value: dev
 
  - name: feedr-1uotes
-   project: src/FeedR.Feeds.Quotes/FeedR.Feeds.Quotes.csproj
+   project: src/Feeds/Quotes/FeedR.Feeds.Quotes/FeedR.Feeds.Quotes.csproj
    bindings:
     - port: 5030
    env:
@@ -33,7 +33,7 @@ services:
       value: dev
 
  - name: feedr-notifier
-   project: src/FeedR.Notifier/FeedR.Notifier.csproj
+   project: src/Notifier/FeedR.Notifier/FeedR.Notifier.csproj
    bindings:
     - port: 5040
    env:
