@@ -15,6 +15,7 @@ The overall repository structure consists of the following projects located unde
   <summary>TOOLS</summary>
   <li><a href="#Tye">Tye</a></li>
   <li><a href="#Docker">Docker</a></li>
+  <li><a href="#YARP">YARP</a></li>
 </details>
 
 
@@ -41,5 +42,17 @@ The container becomes the unit for distributing and testing your application.
 When you’re ready, deploy your application into your production environment, as a container or an orchestrated service. This works the same whether your production environment is a local data center, a cloud provider, or a hybrid of the two.
 
 More: [docker.com](<https://www.docker.com/>), [samples](<https://docs.docker.com/samples/dotnetcore/>)
+
+
+## YARP
+
+Yet Another Reverse Proxy!
+Reverse proxies are used to listen to incoming HTTP requests and to forward the requests to appropriate servers based on the contents of the request. Unlike a typical firewall/router which acts at layer 4 (TCP/IP), reverse proxies typically work at layer 7 so they understand http and work based on http fields.
+
+When YARP proxies a request, it handles the HTTP connection from the client, and then creates its own connections to the destination server, and both sides can benefit from connection pooling.
+
+<img src="items/yarp.png" alt="yarp" width="150" height="80">
+
+More: [YARP](<https://microsoft.github.io/reverse-proxy/>)
 
 
