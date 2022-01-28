@@ -58,7 +58,7 @@ Using a reverse proxy has a number of advantages:
 <li>It acts as the public endpoint for a site or set of services, enabling the url-space exposed to be independent from the actual implementation</li>
 <li>Forwards calls to backend servers to perform real work, balancing load between them</li>
 <li>Can offload work from backend servers such as TLS Encryption, Auth2, Compression, Caching</li>
-
+<br />
 
 More: [YARP](<https://microsoft.github.io/reverse-proxy/>), [YARP: The .NET Reverse proxy](<https://docs.microsoft.com/en-us/shows/on-net/yarp-the-net-reverse-proxy>)
 
