@@ -18,7 +18,7 @@ The overall repository structure consists of the following projects located unde
   <li><a href="#YARP">YARP</a></li>
 </details>
 
-
+<br />
 ## Tye
 
 Tye is a tool that makes developing, testing, and deploying microservices and distributed applications easier. 
@@ -26,7 +26,7 @@ Project Tye includes a local orchestrator to make developing microservices easie
 
 Documentation and installation: [Project Tye](<https://github.com/dotnet/tye>), [devblogs.microsoft.com](<https://devblogs.microsoft.com/dotnet/introducing-project-tye/>).
 
-
+<br />
 ## Docker
 
 ### Overview
@@ -43,7 +43,7 @@ When you’re ready, deploy your application into your production environment, a
 
 More: [docker.com](<https://www.docker.com/>), [samples](<https://docs.docker.com/samples/dotnetcore/>)
 
-
+<br />
 ## YARP
 
 Yet Another Reverse Proxy!
