@@ -51,7 +51,7 @@ Reverse proxies are used to listen to incoming HTTP requests and to forward the 
 
 When YARP proxies a request, it handles the HTTP connection from the client, and then creates its own connections to the destination server, and both sides can benefit from connection pooling.
 
-<img src="items/yarp.png" alt="yarp" width="150" height="80">
+<img src="items/yarp.png" alt="yarp" width="686" height="248">
 
 More: [YARP](<https://microsoft.github.io/reverse-proxy/>)
 
