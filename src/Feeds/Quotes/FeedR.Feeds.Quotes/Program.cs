@@ -16,13 +16,13 @@ app.MapGet("/", () => "FeedR Quotes");
 app.MapPost("/pricing/start", async (PricingRequestChannel channel, IPricingRequestFactory pricingFactory) =>
 {
     await channel.Requests.Writer.WriteAsync(pricingFactory.StartRequest());
-    return Results.Ok;
+    return "Pricing Background service Started!";
 });
 
 app.MapPost("/pricing/stop", async (PricingRequestChannel channel, IPricingRequestFactory pricingFactory) =>
 {
     await channel.Requests.Writer.WriteAsync(pricingFactory.StopRequest());
-    return Results.Ok;
+    return "Pricing Background service Stopped!";
 });
 #endregion
 

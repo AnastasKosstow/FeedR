@@ -26,7 +26,7 @@ services:
     container_name: feedr-notifier
     restart: unless-stopped
     ports:
-      - 5020:80
+      - 5040:80
     networks:
       - feedr
 
@@ -36,7 +36,7 @@ services:
     container_name: feedr-feeds-news
     restart: unless-stopped
     ports:
-      - 5030:80
+      - 5020:80
     networks:
       - feedr
 
@@ -46,7 +46,7 @@ services:
     container_name: feedr-feeds-quotes
     restart: unless-stopped
     ports:
-      - 5040:80
+      - 5030:80
     networks:
       - feedr
 

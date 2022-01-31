@@ -7,7 +7,9 @@ internal static class ServiceCollectionExtensions
 {
     internal static IServiceCollection AddServices(this IServiceCollection services)
     {
-        return services.AddSingleton<IPricingGenerator, PricingGenerator>();
+        return services
+            .AddSingleton<PricingRequestChannel>()
+            .AddSingleton<IPricingGenerator, PricingGenerator>();
     }
 
     internal static IServiceCollection AddPricingFactory(this IServiceCollection services)
