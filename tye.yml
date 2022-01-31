@@ -24,7 +24,7 @@ services:
     - name: ASPNETCORE_ENVIRONMENT
       value: dev
 
- - name: feedr-1uotes
+ - name: feedr-quotes
    project: src/Feeds/Quotes/FeedR.Feeds.Quotes/FeedR.Feeds.Quotes.csproj
    bindings:
     - port: 5030
