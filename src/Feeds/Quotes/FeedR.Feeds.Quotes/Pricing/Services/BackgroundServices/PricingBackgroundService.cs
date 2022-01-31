@@ -1,28 +1,37 @@
-﻿namespace FeedR.Feeds.Quotes.Pricing.Services
+﻿using FeedR.Feeds.Quotes.Pricing.Requests;
+
+namespace FeedR.Feeds.Quotes.Pricing.Services
 {
     internal class PricingBackgroundService : BackgroundService
     {
+        private readonly ILogger<PricingBackgroundService> _logger;
         private readonly IPricingGenerator _pricingGenerator;
+        private readonly PricingRequestChannel _requestChannel;
 
-        public PricingBackgroundService(IPricingGenerator pricingGenerator)
-            =>
+        public PricingBackgroundService(ILogger<PricingBackgroundService> logger, IPricingGenerator pricingGenerator, PricingRequestChannel requestChannel)
+        {
+            _logger = logger;
             _pricingGenerator = pricingGenerator;
-
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-        {
-            throw new NotImplementedException();
+            _requestChannel = requestChannel;
         }
 
-        public async Task StartAsync(CancellationToken cancellationToken)
+        protected override async Task ExecuteAsync(CancellationToken cancellationToken)
         {
-            await Task.Factory.StartNew(() =>
-                _pricingGenerator.StartAsync(),
-                TaskCreationOptions.LongRunning);
-        }
-
-        public async Task StopAsync(CancellationToken cancellationToken)
-        {
-            await _pricingGenerator.StopAsync();
+            await foreach (IPricingRequest request in _requestChannel.Requests.Reader.ReadAllAsync(cancellationToken))
+            {
+                if (request is StartPricing)
+                {
+                    await Task.Factory.StartNew(() => _pricingGenerator.StartAsync(), TaskCreationOptions.LongRunning);
+                }
+                else if (request is StopPricing)
+                {
+                    await _pricingGenerator.StopAsync();
+                }
+                else
+                {
+                    _logger.LogInformation($"No Request found!");
+                }
+            }
         }
     }
 }
