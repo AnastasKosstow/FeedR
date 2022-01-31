@@ -10,7 +10,9 @@
 
         public async Task StartAsync(CancellationToken cancellationToken)
         {
-            await _pricingGenerator.StartAsync();
+            await Task.Factory.StartNew(() =>
+                _pricingGenerator.StartAsync(),
+                TaskCreationOptions.LongRunning);
         }
 
         public async Task StopAsync(CancellationToken cancellationToken)
