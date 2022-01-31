@@ -4,6 +4,7 @@ namespace FeedR.Feeds.Quotes.Pricing.Services
 {
     internal class PricingBackgroundService : BackgroundService
     {
+        private int _runningStatus;
         private readonly ILogger<PricingBackgroundService> _logger;
         private readonly IPricingGenerator _pricingGenerator;
         private readonly PricingRequestChannel _requestChannel;
@@ -21,17 +22,35 @@ namespace FeedR.Feeds.Quotes.Pricing.Services
             {
                 if (request is StartPricing)
                 {
-                    await Task.Factory.StartNew(() => _pricingGenerator.StartAsync(), TaskCreationOptions.LongRunning);
+                    await StartGeneratorAsync();
                 }
                 else if (request is StopPricing)
                 {
-                    await _pricingGenerator.StopAsync();
+                    await StopGeneratorAsync();
                 }
                 else
                 {
                     _logger.LogInformation($"No Request found!");
                 }
             }
+        }
+
+        private async Task StartGeneratorAsync()
+        {
+            if (Interlocked.Exchange(ref _runningStatus, 1) == 1)
+            {
+                return;
+            }
+            await Task.Factory.StartNew(() => _pricingGenerator.StartAsync(), TaskCreationOptions.LongRunning);
+        }
+
+        private async Task StopGeneratorAsync()
+        {
+            if (Interlocked.Exchange(ref _runningStatus, 0) == 0)
+            {
+                return;
+            }
+            await _pricingGenerator.StopAsync();
         }
     }
 }
