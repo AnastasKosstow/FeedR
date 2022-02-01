@@ -1,9 +1,11 @@
 using FeedR.Feeds.Quotes.Extensions;
 using FeedR.Feeds.Quotes.Pricing.Factory;
 using FeedR.Feeds.Quotes.Pricing.Services;
+using FeedR.Shared.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services
+    .AddRedis(builder.Configuration)
     .AddServices()
     .AddPricingFactory()
     .AddBackgroundServices();
