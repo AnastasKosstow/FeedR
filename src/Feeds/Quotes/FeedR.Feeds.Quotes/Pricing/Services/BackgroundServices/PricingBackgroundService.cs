@@ -1,56 +1,65 @@
 ﻿using FeedR.Feeds.Quotes.Pricing.Requests;
+using FeedR.Shared.Streaming;
 
-namespace FeedR.Feeds.Quotes.Pricing.Services
+namespace FeedR.Feeds.Quotes.Pricing.Services;
+
+internal class PricingBackgroundService : BackgroundService
 {
-    internal class PricingBackgroundService : BackgroundService
+    private int _runningStatus;
+    private readonly IPricingGenerator _pricingGenerator;
+    private readonly IStreamPublisher _streamPublisher;
+    private readonly PricingRequestChannel _requestChannel;
+
+    public PricingBackgroundService(
+        IPricingGenerator pricingGenerator, 
+        IStreamPublisher streamPublisher, 
+        PricingRequestChannel requestChannel)
     {
-        private int _runningStatus;
-        private readonly ILogger<PricingBackgroundService> _logger;
-        private readonly IPricingGenerator _pricingGenerator;
-        private readonly PricingRequestChannel _requestChannel;
+        _pricingGenerator = pricingGenerator;
+        _streamPublisher = streamPublisher;
+        _requestChannel = requestChannel;
+    }
 
-        public PricingBackgroundService(ILogger<PricingBackgroundService> logger, IPricingGenerator pricingGenerator, PricingRequestChannel requestChannel)
+    protected override async Task ExecuteAsync(CancellationToken cancellationToken)
+    {
+        await foreach (IPricingRequest request in _requestChannel.Requests.Reader.ReadAllAsync(cancellationToken))
         {
-            _logger = logger;
-            _pricingGenerator = pricingGenerator;
-            _requestChannel = requestChannel;
-        }
-
-        protected override async Task ExecuteAsync(CancellationToken cancellationToken)
-        {
-            await foreach (IPricingRequest request in _requestChannel.Requests.Reader.ReadAllAsync(cancellationToken))
+            if (request is StartPricing)
             {
-                if (request is StartPricing)
-                {
-                    await StartGeneratorAsync();
-                }
-                else if (request is StopPricing)
-                {
-                    await StopGeneratorAsync();
-                }
-                else
-                {
-                    _logger.LogInformation($"No Request found!");
-                }
+                await StartGeneratorAsync();
+            }
+            else if (request is StopPricing)
+            {
+                await StopGeneratorAsync();
+            }
+            else
+            {
+                // throw
             }
         }
+    }
 
-        private async Task StartGeneratorAsync()
+    private async Task StartGeneratorAsync()
+    {
+        if (Interlocked.Exchange(ref _runningStatus, 1) == 1)
         {
-            if (Interlocked.Exchange(ref _runningStatus, 1) == 1)
-            {
-                return;
-            }
-            await Task.Factory.StartNew(() => _pricingGenerator.StartAsync(), TaskCreationOptions.LongRunning);
+            return;
         }
 
-        private async Task StopGeneratorAsync()
+        await foreach (var currencyPair in _pricingGenerator.StartAsync())
         {
-            if (Interlocked.Exchange(ref _runningStatus, 0) == 0)
-            {
-                return;
-            }
-            await _pricingGenerator.StopAsync();
+            await _streamPublisher.PublishAsync("pricing", currencyPair);
+
+            // await Task.Factory.StartNew(() => _pricingGenerator.StartAsync(), TaskCreationOptions.LongRunning);
         }
+    }
+
+    private async Task StopGeneratorAsync()
+    {
+        if (Interlocked.Exchange(ref _runningStatus, 0) == 0)
+        {
+            return;
+        }
+        await _pricingGenerator.StopAsync();
     }
 }

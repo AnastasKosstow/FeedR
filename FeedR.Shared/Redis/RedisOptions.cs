@@ -1,8 +1,6 @@
-﻿
-namespace FeedR.Shared.Redis
+﻿namespace FeedR.Shared.Redis;
+
+public sealed class RedisOptions
 {
-    public sealed class RedisOptions
-    {
-        public string? ConnectionString { get; set; }
-    }
+    public string? ConnectionString { get; set; }
 }
