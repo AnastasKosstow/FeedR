@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\FeedR.Shared\FeedR.Shared.csproj" />
     <ProjectReference Include="..\..\..\Shared\FeedR.Shared\FeedR.Shared.csproj" />
   </ItemGroup>
 
