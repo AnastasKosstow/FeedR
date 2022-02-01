@@ -4,7 +4,7 @@ using StackExchange.Redis;
 
 namespace FeedR.Shared.Redis;
 
-public static class Extensions
+public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddRedis(this IServiceCollection services, IConfiguration configuration)
     {

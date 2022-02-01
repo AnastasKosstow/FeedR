@@ -39,7 +39,9 @@ internal sealed class PricingGenerator : IPricingGenerator
                 _currencyPairs[symbol] = newPricing;
 
                 var timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
-                _logger.LogInformation(Log(symbol, pricing, newPricing, tick));
+                _logger.LogInformation(
+                    Log(symbol, pricing, newPricing, tick));
+
                 yield return new CurrencyPair(symbol, newPricing, timestamp);
 
                 await Task.Delay(TimeSpan.FromSeconds(5));
