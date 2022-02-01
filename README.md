@@ -16,6 +16,7 @@ The overall repository structure consists of the following projects located unde
   <li><a href="#Tye">Tye</a></li>
   <li><a href="#Docker">Docker</a></li>
   <li><a href="#YARP">YARP</a></li>
+  <li><a href="#Redis">Redis</a></li>
 </details>
 
 ## Tye
@@ -58,5 +59,12 @@ Using a reverse proxy has a number of advantages:
 <br />
 
 More: [YARP](<https://microsoft.github.io/reverse-proxy/>), [YARP: The .NET Reverse proxy](<https://docs.microsoft.com/en-us/shows/on-net/yarp-the-net-reverse-proxy>)
+
+## Redis
+
+Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache, and message broker.
+Redis supports different kinds of abstract data structures, such as strings, lists, maps, sets, sorted sets, HyperLogLogs, bitmaps, streams, and spatial indices.
+
+More: [redis.io](<https://redis.io/>), [Documentation](<https://redis.io/documentation>)
 
 
