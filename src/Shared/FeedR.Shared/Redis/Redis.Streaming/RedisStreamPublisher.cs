@@ -1,5 +1,5 @@
-﻿using FeedR.Shared.Serialization;
-using FeedR.Shared.Streaming;
+﻿using FeedR.Shared.Redis.Streaming.Abstractions;
+using FeedR.Shared.Serialization;
 using StackExchange.Redis;
 
 namespace FeedR.Shared.Redis.Streaming;

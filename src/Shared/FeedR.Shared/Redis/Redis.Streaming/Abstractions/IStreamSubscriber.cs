@@ -1,5 +1,5 @@
 ﻿
-namespace FeedR.Shared.Streaming;
+namespace FeedR.Shared.Redis.Streaming.Abstractions;
 
 public interface IStreamSubscriber
 {

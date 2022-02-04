@@ -1,4 +1,4 @@
-using FeedR.Shared.Streaming;
+using FeedR.Shared.Redis.Streaming.Abstractions;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FeedR.Shared.Redis.Streaming;
