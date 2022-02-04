@@ -1,5 +1,5 @@
 ﻿using FeedR.Feeds.Quotes.Pricing.Requests;
-using FeedR.Shared.Redis.Streaming.Abstractions;
+using FeedR.Shared.Streaming;
 
 namespace FeedR.Feeds.Quotes.Pricing.Services;
 

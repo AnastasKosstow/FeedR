@@ -1,4 +1,4 @@
-using FeedR.Shared.Redis.Streaming.Abstractions;
+using FeedR.Shared.Streaming;
 using FeedR.Shared.Serialization;
 using StackExchange.Redis;
 

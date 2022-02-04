@@ -1,4 +1,4 @@
-﻿using FeedR.Shared.Redis.Streaming.Abstractions;
+﻿using FeedR.Shared.Streaming;
 
 namespace FeedR.Aggregator.Services;
 
