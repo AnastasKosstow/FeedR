@@ -1,5 +1,5 @@
 ﻿using FeedR.Feeds.Quotes.Pricing.Requests;
-using FeedR.Shared.Streaming;
+using FeedR.Shared.Redis.Streaming.Abstractions;
 
 namespace FeedR.Feeds.Quotes.Pricing.Services;
 
@@ -49,8 +49,6 @@ internal class PricingBackgroundService : BackgroundService
         await foreach (var currencyPair in _pricingGenerator.StartAsync())
         {
             await _streamPublisher.PublishAsync("pricing", currencyPair);
-
-            // await Task.Factory.StartNew(() => _pricingGenerator.StartAsync(), TaskCreationOptions.LongRunning);
         }
     }
 
