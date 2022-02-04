@@ -8,7 +8,6 @@ internal sealed class PricingRequestFactory : PricingRequestFactoryBase, IPricin
         => 
         FindProvider(nameof(StartPricing));
 
-
     public IPricingRequest StopRequest()
         => 
         FindProvider(nameof(StopPricing));
