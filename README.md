@@ -78,7 +78,7 @@ The main usage scenarios
 <li>Efficiently connecting polyglot services in microservices style architecture</li>
 <li>Connecting mobile devices, browser clients to backend services</li>
 <li>Generating efficient client libraries</li>
-
 <br />
+
 More: [Documentation](<https://grpc.io/docs/>)
 
