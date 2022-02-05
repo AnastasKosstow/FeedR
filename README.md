@@ -17,6 +17,7 @@ The overall repository structure consists of the following projects located unde
   <li><a href="#Docker">Docker</a></li>
   <li><a href="#YARP">YARP</a></li>
   <li><a href="#Redis">Redis</a></li>
+  <li><a href="#gRPC">gRPC</a></li>
 </details>
 
 ## Tye
@@ -66,5 +67,15 @@ Redis is an open source (BSD licensed), in-memory data structure store, used as 
 Redis supports different kinds of abstract data structures, such as strings, lists, maps, sets, sorted sets, HyperLogLogs, bitmaps, streams, and spatial indices.
 
 More: [redis.io](<https://redis.io/>), [Documentation](<https://redis.io/documentation>)
+
+## gRPC
+
+- Remote Procedure Call (RPC)
+Efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication. It is also applicable in last mile of distributed computing to connect devices, mobile applications and browsers to backend services.
+
+The main usage scenarios
+E<li>fficiently connecting polyglot services in microservices style architecture</li>
+<li>Connecting mobile devices, browser clients to backend services</li>
+<li>Generating efficient client libraries</li>
 
 
