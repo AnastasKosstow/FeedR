@@ -17,6 +17,8 @@ internal sealed class PricingGenerator : IPricingGenerator
 
     private bool _isRunning;
 
+    public event EventHandler<CurrencyPair>? PricingUpdated;
+
     public IEnumerable<string> GetSymbols() 
         => _currencyPairs.Keys;
 
@@ -45,7 +47,10 @@ internal sealed class PricingGenerator : IPricingGenerator
                 _logger.LogInformation(
                     Log(symbol, pricing, newPricing, tick));
 
-                yield return new CurrencyPair(symbol, newPricing, timestamp);
+                var currencyPair = new CurrencyPair(symbol, newPricing, timestamp);
+
+                PricingUpdated?.Invoke(this, currencyPair);
+                yield return currencyPair;
 
                 await Task.Delay(TimeSpan.FromSeconds(5));
             }
