@@ -17,6 +17,9 @@ internal sealed class PricingGenerator : IPricingGenerator
 
     private bool _isRunning;
 
+    public IEnumerable<string> GetSymbols() 
+        => _currencyPairs.Keys;
+
     public PricingGenerator(ILogger<PricingGenerator> logger)
     {
         _logger = logger;
