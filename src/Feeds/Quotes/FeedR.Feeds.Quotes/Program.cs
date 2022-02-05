@@ -12,9 +12,12 @@ builder.Services
     .AddRedisStreaming()
     .AddServices()
     .AddPricingFactory()
-    .AddBackgroundServices();
+    .AddBackgroundServices()
+    .AddGrpc();
 
 var app = builder.Build();
+
+app.MapGrpcService<PricingGrpcService>();
 
 app.MapGet("/", () => "FeedR Quotes");
 

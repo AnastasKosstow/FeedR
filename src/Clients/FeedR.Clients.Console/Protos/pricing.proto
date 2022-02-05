@@ -1,6 +1,6 @@
 ﻿syntax = "proto3";
 
-option csharp_namespace = "FeedR.Feeds.Quotes.Pricing";
+option csharp_namespace = "FeedR.Clients.Console";
 
 package pricing.protos;
 
