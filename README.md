@@ -70,12 +70,13 @@ More: [redis.io](<https://redis.io/>), [Documentation](<https://redis.io/documen
 
 ## gRPC
 
-- Remote Procedure Call (RPC)
+Remote Procedure Call (RPC)
 Efficiently connect services in and across data centers with pluggable support for load balancing, tracing, health checking and authentication. It is also applicable in last mile of distributed computing to connect devices, mobile applications and browsers to backend services.
 
 The main usage scenarios
-E<li>fficiently connecting polyglot services in microservices style architecture</li>
+<li>Efficiently connecting polyglot services in microservices style architecture</li>
 <li>Connecting mobile devices, browser clients to backend services</li>
 <li>Generating efficient client libraries</li>
 
+More: [Documentation](<https://grpc.io/docs/>)
 
